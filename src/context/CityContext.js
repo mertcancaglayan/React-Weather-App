@@ -10,6 +10,7 @@ export const CityProvider = ({ children }) => {
 		setSelectedCity,
 	};
 
+
 	return <CityContext.Provider value={values}>{children}</CityContext.Provider>;
 };
 
