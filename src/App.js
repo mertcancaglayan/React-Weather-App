@@ -1,16 +1,18 @@
 import "./App.css";
 import Cities from "./components/Cities";
 import { CityProvider } from "./context/CityContext";
-import CardGallery from "./components/CardGallery";
+import { WeatherApi } from "./context/WeatherApi";
+import Card from "./components/Card";
 
 function App() {
 	return (
 		<div className="App">
 			<CityProvider>
 				<Cities></Cities>
-				<CardGallery></CardGallery>
+				<WeatherApi>
+				<Card></Card>
+				</WeatherApi>
 			</CityProvider>
-
 		</div>
 	);
 }
