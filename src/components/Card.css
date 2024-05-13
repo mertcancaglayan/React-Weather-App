@@ -13,7 +13,7 @@
 	justify-content: space-evenly;
 	flex: 0.2;
 	transition: 0.5s ease;
-	height: 40vh;
+	height: 43vh;
 }
 
 .card-container.active {
@@ -142,7 +142,15 @@
 	display: none;
 }
 
+
+
 /* Media Queries */
+@media screen and (min-width: 1024px) {
+	.card-container.active .weather-details img {
+		width: 40%;
+	}
+}
+
 @media screen and (min-width: 800px) and (max-width: 1024px) {
 	.day {
 		font-size: 1.2rem !important; /* Added !important */
@@ -178,8 +186,18 @@
 		width: 100%;
 		max-width: 90%;
 		flex: none;
+		border-radius: 1rem;
 		overflow: hidden;
 		height: 30vh;
+		padding-bottom: 0.3rem;
+	}
+
+	.card-container:first-child {
+		border-radius: 1rem;
+	}
+
+	.card-container:last-child {
+		border-radius: 1rem;
 	}
 
 	.card-container.active {
@@ -214,6 +232,10 @@
 		background-color: #323544;
 	}
 
+	.day {
+		font-size: 1.2rem;
+	}
+
 	.city {
 		font-size: 2rem !important;
 	}
@@ -227,7 +249,7 @@
 
 	.weather-details {
 		width: 30%;
-		font-size: 0.5rem;
+		font-size: 0.7rem !important;
 	}
 	.card-container.active .weather-details img {
 		width: 30%;
@@ -259,7 +281,7 @@
 
 	.weather-details {
 		width: 30%;
-		font-size: 0.7rem !important;
+		font-size: 0.5rem !important;
 	}
 }
 
