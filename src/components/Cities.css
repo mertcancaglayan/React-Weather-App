@@ -1,0 +1,37 @@
+.selection {
+	font-family: Arial, sans-serif;
+}
+
+.selection h2 {
+	margin-bottom: 10px;
+    text-align: center;
+}
+
+.select-box {
+	width: 200px;
+	padding: 8px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.select-box__option {
+	padding: 8px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .selection {
+        position: absolute;
+        top: 10%;
+        right: 10%;
+    }
+
+    .select-box {
+        width: 150px;
+        padding: 8px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+}

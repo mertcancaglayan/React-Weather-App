@@ -27,14 +27,33 @@ function WeatherApi({ children }) {
 				const startDate = new Date(today.getFullYear(), today.getMonth(), today.getDate());
 				const endDate = new Date(today.getFullYear(), today.getMonth(), today.getDate() + 5);
 
-				const filteredDates = weatherData.list.filter((item) => {
+				const filteredDates = [];
+
+				weatherData.list.forEach(function (item) {
 					const itemDate = new Date(item.dt_txt);
 					if (itemDate.getDate() === today.getDate()) {
-						return true;
+						if (itemDate.getHours() < 15) {
+							return;
+						} else if (itemDate.getHours() === 15) {
+							filteredDates.push(item);
+						} else {
+							const existingItem = filteredDates.find(
+								(e) => new Date(e.dt_txt).getDate() === itemDate.getDate(),
+							);
+							if (!existingItem) {
+								filteredDates.push(item);
+							}
+						}
 					} else {
-						return itemDate.getHours() === 15 && itemDate >= startDate && itemDate < endDate;
+						if (itemDate.getHours() === 15) {
+							if (itemDate >= startDate && itemDate < endDate) {
+								filteredDates.push(item);
+							}
+						}
 					}
 				});
+
+				console.log(filteredDates);
 
 				const dailyWeather = filteredDates.map((item) => ({
 					city: city,
@@ -55,8 +74,8 @@ function WeatherApi({ children }) {
 	}, [city]);
 
 	useEffect(() => {
-		if (weatherData !== null) {
-			console.log(weatherData);
+		if (weatherData == null) {
+			return;
 		}
 	}, [weatherData]);
 
