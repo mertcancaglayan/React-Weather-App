@@ -25,7 +25,7 @@ function Card() {
 					className={`card-container ${index === activeIndex ? "active" : ""}`}
 					onClick={() => toggleActive(index)}
 				>
-					<p className="day">Day</p>
+					<h3 className="day">{todayWeather.date}</h3>
 					<p className="city">{todayWeather.city}</p>
 					<div className="image-container">
 						<img className="weather-image" src={sunnyIcon} alt="" />

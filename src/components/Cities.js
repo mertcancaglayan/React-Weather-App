@@ -1,4 +1,5 @@
 import React from "react";
+import "./Cities.css"
 import { useFormik } from "formik";
 import { useCity } from "../context/CityContext";
 
@@ -102,10 +103,10 @@ const Cities = () => {
 
 	return (
 		<form className="selection">
-			<h2>Cities</h2>
-			<select name="selectedCity" onChange={handleCityChange}>
+			<h2>Choose City</h2>
+			<select className="select-box" name="selectedCity" onChange={handleCityChange}>
 				{cities.map((city, index) => (
-					<option key={index} value={city}>
+					<option className="select-box__option" key={index} value={city}>
 						{city}
 					</option>
 				))}
