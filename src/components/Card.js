@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import "./Card.css";
+import cloudyIcon from "../assets/cloudy.png";
+import snowyIcon from "../assets/snowy.png";
 import sunnyIcon from "../assets/sunny.png";
+import rainyIcon from "../assets/rainy.png";
 import humidityIcon from "../assets/humidity.png";
 import windIcon from "../assets/wind.png";
 import { WeatherContext } from "../context/WeatherApi";
@@ -28,7 +31,21 @@ function Card() {
 					<h3 className="day">{todayWeather.date}</h3>
 					<p className="city">{todayWeather.city}</p>
 					<div className="image-container">
-						<img className="weather-image" src={sunnyIcon} alt="" />
+						<img
+							className="weather-image"
+							src={
+								todayWeather.weatherDescription === "Clear"
+									? sunnyIcon
+									: todayWeather.weatherDescription === "Snowy"
+									? snowyIcon
+									: todayWeather.weatherDescription === "Clouds"
+									? cloudyIcon
+									: todayWeather.weatherDescription === "Rain"
+									? rainyIcon
+									: ""
+							}
+							alt=""
+						/>
 					</div>
 					<div className="current-weather">
 						<p className="current-degree">{todayWeather.temperature}°C</p>
