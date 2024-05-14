@@ -22,15 +22,38 @@
 
 @media screen and (max-width: 800px) {
     .selection {
-        position: absolute;
-        top: 10%;
-        right: 10%;
+       position: absolute;
+       top: 10%;
+       left: 15%;
+    }
+
+    .selection h2 {
+        font-size: 1.3rem;
     }
 
     .select-box {
-        width: 150px;
+        width: 120px;
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .selection {
+       position: absolute;
+       top: 10%;
+       left: 10%;
+    }
+
+    .selection h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .select-box {
+        width: 120px;
         padding: 8px;
-        font-size: 16px;
+        font-size: 1rem;
         border: 1px solid #ccc;
         border-radius: 5px;
     }
