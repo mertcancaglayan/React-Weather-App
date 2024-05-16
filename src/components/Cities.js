@@ -1,17 +1,10 @@
 import React from "react";
 import "./Cities.css"
-import { useFormik } from "formik";
 import { useCity } from "../context/CityContext";
 
 const Cities = () => {
 	const { setSelectedCity } = useCity();
 
-	
-	const { values } = useFormik({
-		initialValues: {
-			selectedCity: "İstanbul",
-		},
-	});
 
 	const handleCityChange = (event) => {
 		const selectedCity = event.target.value;

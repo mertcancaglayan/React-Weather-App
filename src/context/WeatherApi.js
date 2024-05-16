@@ -53,7 +53,6 @@ function WeatherApi({ children }) {
 					}
 				});
 
-				console.log(filteredDates);
 
 				const dailyWeather = filteredDates.map((item) => ({
 					city: city,
@@ -73,11 +72,6 @@ function WeatherApi({ children }) {
 		fetchData();
 	}, [city]);
 
-	useEffect(() => {
-		if (weatherData == null) {
-			return;
-		}
-	}, [weatherData]);
 
 	return <WeatherContext.Provider value={weatherData}>{children}</WeatherContext.Provider>;
 }
