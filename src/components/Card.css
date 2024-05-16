@@ -45,7 +45,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.7rem;
+	font-size: 1.8vw;
 	font-weight: 700;
 	color: aliceblue;
 	font-family: "Playfair Display", serif;
@@ -82,7 +82,7 @@
 }
 
 .current-degree {
-	font-size: 4rem;
+	font-size: 4vw;
 	font-weight: 800;
 	color: aliceblue;
 	display: none;
@@ -90,7 +90,7 @@
 
 .current-status {
 	display: none;
-	font-size: 1.3rem;
+	font-size: 2vw;
 	font-weight: 700;
 	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 	color: aliceblue;
@@ -113,7 +113,6 @@
 	justify-content: center;
 	width: 100%;
 	margin: 0.5rem 0 0;
-	font-size: 2.2rem;
 	font-weight: 700;
 	color: aliceblue;
 	font-family: "Playfair Display", serif;
@@ -126,7 +125,7 @@
 	width: 80%;
 	font-weight: 600;
 	color: aliceblue;
-	font-size: 1rem;
+	font-size: 1.2vw;
 }
 
 .card-container.active .weather-details .col {
@@ -145,34 +144,36 @@
 
 .weather-details {
 	display: none;
+	white-space: nowrap;
 }
 
-/* Media Queries */
 @media screen and (min-width: 1024px) {
 	.card-container.active .weather-details img {
 		width: 40%;
 	}
+
+	.city {
+		font-size: 2vw;
+	}
 }
 
 @media screen and (min-width: 800px) and (max-width: 1024px) {
-	.day {
-		font-size: 1.2rem !important; /* Added !important */
-	}
-
 	.current-degree {
-		font-size: 3rem;
 		font-weight: 800;
 		color: aliceblue;
 		display: none;
 	}
-
-	.weather-details {
-		width: 60%;
-		font-size: 0.7rem !important;
-	}
 }
 
 @media screen and (max-width: 800px) {
+	.city {
+		font-size: 1.6rem;
+	}
+
+	.day {
+		font-size: 1.2rem;
+	}
+
 	.gallery {
 		width: 90%;
 		display: grid;
@@ -231,19 +232,15 @@
 		background-color: #323544;
 	}
 
-	.day {
-		font-size: 1.2rem;
-	}
-
-	.city {
-		font-size: 2rem !important;
-	}
-
 	.current-degree {
-		font-size: 2rem;
+		font-size: 3rem;
 		font-weight: 800;
 		color: aliceblue;
 		display: none;
+	}
+
+	.current-status {
+		font-size: 1.5rem;
 	}
 
 	.weather-details {
@@ -262,10 +259,6 @@
 		flex: none;
 		overflow: hidden;
 		height: 25vh;
-	}
-
-	.day {
-		font-size: 1rem;
 	}
 
 	.city {
