@@ -11,3 +11,8 @@ This application allows you to view 5 day weather forecast for all cities in Tur
 - Each day card displays the date, weather condition image (sunny, rainy, snowy, cloudy), temperature, wind and humidity.
 
 ![Preview](./weather-app-preview.png)
+
+<video controls>
+  <source src="preview.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
